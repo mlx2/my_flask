@@ -6,15 +6,15 @@
 
 {% block content %}
   <form method="post">
-    <label for="title">Title</label>
+    <label for="title">主题</label>
     <input name="title" id="title"
       value="{{ request.form['title'] or post['title'] }}" required>
-    <label for="body">Body</label>
+    <label for="body">快点改，有话快说，有屁快放</label>
     <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
-    <input type="submit" value="Save">
+    <input type="submit" value="这下好了吧">
   </form>
   <hr>
   <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
-    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+    <input class="danger" type="submit" value="又不想改了？" onclick="return confirm('别墨迹');">
   </form>
 {% endblock %}
